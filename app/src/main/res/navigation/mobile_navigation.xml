@@ -3,23 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/nav_search_menu">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.android.pokedex.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_search_menu"
+        android:name="com.android.pokedex.presentation.ui.SearchMenuFragment"
+        android:label="@string/title_search_menu"
+        tools:layout="@layout/fragment_search_menu" >
+
+        <action
+            android:id="@+id/action_nav_search_menu_to_nav_search_pokemon"
+            app:destination="@id/nav_search_pokemon" />
+
+        <action
+            android:id="@+id/action_nav_search_menu_to_nav_random_pokemon"
+            app:destination="@id/nav_random_pokemon" />
+
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.android.pokedex.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/nav_favorites_list"
+        android:name="com.android.pokedex.presentation.ui.FavoritesListFragment"
+        android:label="@string/title_favorites_list"
+        tools:layout="@layout/fragment_favorites_list" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.android.pokedex.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/nav_search_pokemon"
+        android:name="com.android.pokedex.presentation.ui.SearchPokemonFragment"
+        android:label="search_pokemon_fragment"
+        tools:layout="@layout/search_pokemon_fragment" />
+
+    <fragment
+        android:id="@+id/nav_random_pokemon"
+        android:name="com.android.pokedex.presentation.ui.RandomPokemonFragment"
+        android:label="random_pokemon_fragment"
+        tools:layout="@layout/random_pokemon_fragment" />
+
 </navigation>

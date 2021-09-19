@@ -1,9 +1,8 @@
-package com.android.pokedex.ui.splashscreen
+package com.android.pokedex.presentation.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.android.pokedex.MainActivity
 
 class SplashScreen: AppCompatActivity() {
 

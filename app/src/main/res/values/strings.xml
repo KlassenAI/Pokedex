@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Pokedex</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_search_menu">Поиск</string>
+    <string name="title_favorites_list">Избранные</string>
+    <string name="title_pokemon_search">Поиск покемона</string>
+    <string name="title_random_pokemon">Случайный покемон</string>
 </resources>

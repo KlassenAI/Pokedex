@@ -1,4 +1,4 @@
-package com.android.pokedex.ui.dashboard
+package com.android.pokedex.presentation.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,21 +9,22 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.android.pokedex.R
+import com.android.pokedex.presentation.viewmodel.FavoritesListViewModel
 
-class DashboardFragment : Fragment() {
+class FavoritesListFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var favoritesListViewModel: FavoritesListViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProvider(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        favoritesListViewModel =
+                ViewModelProvider(this).get(FavoritesListViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_favorites_list, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        favoritesListViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
